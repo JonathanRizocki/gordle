@@ -38,6 +38,7 @@ func (g *Game) Play() {
 		if slices.Equal(guess, g.solution) {
 			fmt.Printf("🎉 You won! You found it in %d guess(es)!"+
 				" The word was: %s.\n", currentAttempt, string(g.solution))
+			return
 		}
 	}
 	fmt.Printf("😞 You've lost! The solution was: %s. \n", string(g.solution))
