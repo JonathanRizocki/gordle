@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
 	"learngo-pockets/gordle/gordle"
 	"os"
@@ -17,7 +16,7 @@ func main() {
 	}
 
 	// Create the game
-	g, err := gordle.New(bufio.NewReader(os.Stdin), corpus, maxAttempts)
+	g, err := gordle.New(corpus, gordle.WithMaxAttempts(maxAttempts))
 	if err != nil {
 		_, _ = fmt.Fprintf(os.Stderr, "unable to start game :%s", err)
 		return
